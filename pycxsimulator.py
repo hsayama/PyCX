@@ -27,9 +27,18 @@
 ##
 
 import matplotlib
-matplotlib.use('TkAgg')
 
-import pylab
+import platform #SM 3/28/2020
+
+#System check added by Steve Morgan
+if platform.system() == 'Windows': #SM 3/28/2020
+    backend = 'TkAgg'              #SM 3/28/2020
+else:                              #SM 3/28/2020
+    backend = 'Qt5Agg'             #SM 3/28/2020
+    
+matplotlib.use(backend)            #SM 3/28/2020
+
+import matplotlib.pyplot as plt #SM 3/28/2020
 
 ## version check added by Hiroki Sayama on 01/08/2019
 import sys
@@ -253,12 +262,12 @@ class GUI:
         self.drawModel()
 
     def drawModel(self):
-        pylab.ion() # bug fix by Alex Hill in 2013
-        if self.modelFigure == None or self.modelFigure.canvas.manager.window == None:
-            self.modelFigure = pylab.figure()
-        self.modelDrawFunc()
-        self.modelFigure.canvas.manager.window.update()
-        pylab.show() # bug fix by Hiroki Sayama in 2016
+        plt.ion() #SM 3/26/2020
+        if self.modelFigure == None or self.modelFigure.canvas.manager.window == None: 
+            self.modelFigure = plt.figure() #SM 3/26/2020
+        self.modelDrawFunc() #SM 3/28/2020 - Suspect this is superfluous
+        #self.modelFigure.canvas.manager.window.update() #SM 3/26/2020
+        plt.draw() # bug fix by Hiroki Sayama in 2016
 
     def start(self,func=[]):
         if len(func)==3:
@@ -278,7 +287,6 @@ class GUI:
         self.rootWindow.mainloop()
 
     def quitGUI(self):
-        pylab.close('all')
         self.rootWindow.quit()
         self.rootWindow.destroy()
     
