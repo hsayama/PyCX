@@ -24,9 +24,9 @@ def initialize():
 
     for i in network.nodes:
         if random() < initialInfectedRatio:
-            network.node[i]['state'] = infected
+            network.nodes[i]['state'] = infected
         else:
-            network.node[i]['state'] = susceptible
+            network.nodes[i]['state'] = susceptible
 
     nextNetwork = network.copy()
 
@@ -34,7 +34,7 @@ def observe():
     cla()
     nx.draw(network,
             pos = positions,
-            node_color = [network.node[i]['state'] for i in network.nodes],
+            node_color = [network.nodes[i]['state'] for i in network.nodes],
             cmap = cm.Wistia,
             vmin = 0,
             vmax = 1)
@@ -47,12 +47,12 @@ def update():
     time += 1
 
     for i in network.nodes:
-        if network.node[i]['state'] == susceptible:
-            nextNetwork.node[i]['state'] = susceptible
+        if network.nodes[i]['state'] == susceptible:
+            nextNetwork.nodes[i]['state'] = susceptible
             for j in network.neighbors(i):
-                if network.node[j]['state'] == infected:
+                if network.nodes[j]['state'] == infected:
                     if random() < infectionProb:
-                        nextNetwork.node[i]['state'] = infected
+                        nextNetwork.nodes[i]['state'] = infected
                         break
                     else: # adaptive link cutting behavior
                         if random() < linkCuttingProb:
@@ -60,9 +60,9 @@ def update():
                                 nextNetwork.remove_edge(i, j)
         else:
             if random() < recoveryProb:
-                nextNetwork.node[i]['state'] = susceptible
+                nextNetwork.nodes[i]['state'] = susceptible
             else:
-                nextNetwork.node[i]['state'] = infected
+                nextNetwork.nodes[i]['state'] = infected
 
     del network
     network = nextNetwork.copy()

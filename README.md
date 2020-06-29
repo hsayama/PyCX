@@ -1,19 +1,22 @@
 # PyCX
 
-PyCX is a Python-based sample code repository for complex systems research and education.
+PyCX is a Python-based sample code repository for complex systems
+research and education.
 
-_Current version: 1.0 (December 2019)_
+_Current version: 1.1 (June 2019)_
 
-Sample codes are freely available from the **[Project website](http://github.com/hsayama/PyCX/)**.
+Sample codes are freely available from the **[Project
+website](http://github.com/hsayama/PyCX/)**.
 
 ## What is PyCX?
 
 The PyCX project aims to develop an online repository of simple,
 crude, yet easy-to-understand Python sample codes for dynamic complex
-systems modeling and simulation, including iterative maps, ordinary and partial differential equations, cellular automata,
-network analysis, dynamical networks, and agent-based models. You can run, read and
-modify any of its codes to learn the basics of complex systems
-modeling and simulation in Python.
+systems modeling and simulation, including iterative maps, ordinary
+and partial differential equations, cellular automata, network
+analysis, dynamical networks, and agent-based models. You can run,
+read and modify any of its codes to learn the basics of complex
+systems modeling and simulation in Python.
 
 The target audiences of PyCX are researchers and students who are
 interested in developing their own software to study complex systems
@@ -24,19 +27,22 @@ The core philosophy of PyCX is therefore placed on the simplicity,
 readability, generalizability, and pedagogical values of sample
 codes. This is often achieved even at the cost of computational speed,
 efficiency, or maintainability. For example, PyCX does not use
-object-oriented programming paradigms so much, it does not use sophisticated but complicated algorithm or data structure, 
-it *does* use global variables frequently, and so on. These choices were intentionally made based on
-the author's experience in teaching complex systems modeling and simulation to
-non-computer scientists coming from a wide variety of domains.
+object-oriented programming paradigms so much, it does not use
+sophisticated but complicated algorithm or data structure, it *does*
+use global variables frequently, and so on. These choices were
+intentionally made based on the author's experience in teaching
+complex systems modeling and simulation to non-computer scientists
+coming from a wide variety of domains.
 
-For more details of its philosophy and background, see the following open-access article:
-Sayama, H. (2013) PyCX: A Python-based simulation code repository for
-complex systems education. Complex Adaptive Systems Modeling 1:2.
-http://www.casmodeling.com/content/1/1/2
+For more details of its philosophy and background, see the following
+open-access article: Sayama, H. (2013) PyCX: A Python-based simulation
+code repository for complex systems education. Complex Adaptive
+Systems Modeling 1:2.  http://www.casmodeling.com/content/1/1/2
 
 ## How to use it?
 
-1. Install Python 2 or 3, NumPy, SciPy, matplotlib, and NetworkX.
+1. Install Python 3 (or 2, if you want), numpy, scipy, matplotlib, and
+NetworkX.
 
    Installers are available from the following websites:
    * http://python.org/
@@ -45,9 +51,10 @@ http://www.casmodeling.com/content/1/1/2
    * http://networkx.github.io/
   
    Alternatively, you can use prepackaged Python suites, such as:
-   * [Anaconda Distribution](https://www.anaconda.com/distribution/)
+   * [Anaconda Individual Edition](https://www.anaconda.com/products/individual)
 
-   The codes were tested using Anaconda Distribution Python 2.7 and 3.7 on their Spyder and Jupyter Notebook environments.
+   The codes were tested using Anaconda Individual Edition of Python 3.7
+and 2.7 on their Spyder and Jupyter Notebook environments.
 
 2. Choose a PyCX sample code of your interest.
 
@@ -62,6 +69,14 @@ http://www.casmodeling.com/content/1/1/2
 *Note for Jupyter Notebook users:* You can run PyCX codes by entering "%run sample-code-name" in your Notebook.
 
 ## Revision history
+
+### What's new in version 1.1?
+
+* Matplotlib's backend issue has been resolved by Steve Morgan for Mac users.
+
+* MatplotlibDeprecationWarning has been suppressed (particularly for examples that use subplots).
+
+* NetworkX's "node" attribute of a Graph object has been renamed as "nodes" to be compatible with NetworkX 2.
 
 ### What's new in version 1.0?
 
@@ -84,7 +99,6 @@ http://www.casmodeling.com/content/1/1/2
 * Some new examples were added, including: Hopfield networks, simple swarming, network attack experiment, and population-ecomony interactions.
 
 * Minor bug fixes were applied to examples of cascading failure, network communities, etc.
-
 
 ### What was in previous versions 0.3/0.31/0.32?
 
