@@ -3,8 +3,8 @@ from pylab import *
 
 import networkx as nx
 
-m0 = 5 # number of nodes in initial condition
-m = 2  # number of edges per new node
+m0 = 7 # number of nodes in initial condition. previous m0 =5
+m = 3  # number of edges per new node. previous m = 2
 
 def initialize():
     global g
