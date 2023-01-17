@@ -121,3 +121,41 @@ and 2.7 on their Spyder and Jupyter Notebook environments.
 ## Questions? Comments? Send them to sayama@binghamton.edu.
 
 * [Old project website](http://pycx.sourceforge.net/)
+
+## Notes for MacOS M1 users
+
+Some changes need to be made for the PyQt backend to work properly with the Mac M1 chip architecture. Assuming using VSCode, here are the steps to configure:
+
+1. Set `QT_API` environment variable in `launch.json` to 
+
+```
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "QT_API": "pyqt5"
+            }
+        }
+    ]
+}
+```
+
+2. Install `PyQt6` into your virtual environment
+
+`pip3 install PyQt6`
+
+3. At the top of `pycxsimulator.py` add
+
+`import PyQt6.QtCore`
+
+Now the visualization component should run on your MacOS M1 chip device.
