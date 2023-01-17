@@ -123,6 +123,7 @@ and 2.7 on their Spyder and Jupyter Notebook environments.
 * [Old project website](http://pycx.sourceforge.net/)
 
 ## Notes for MacOS M1 users
+(Special thanks to Ivan Cheung @ivanmkc and Christian Lemp @clemp for the following)
 
 Some changes need to be made for the PyQt backend to work properly with the Mac M1 chip architecture. Assuming using VSCode, here are the steps to configure:
 
