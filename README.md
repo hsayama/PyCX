@@ -123,7 +123,7 @@ and 2.7 on their Spyder and Jupyter Notebook environments.
 * [Old project website](http://pycx.sourceforge.net/)
 
 ## Notes for MacOS M1 users
-(Special thanks to Ivan Cheung @ivanmkc and Christian Lemp @clemp for the following)
+(Special thanks to Ivan Cheung @ivanmkc, Christian Lemp @clemp and Vison (Xin) Wang @xin-wang-kr for the following)
 
 Some changes need to be made for the PyQt backend to work properly with the Mac M1 chip architecture. Assuming using VSCode, here are the steps to configure:
 
@@ -160,3 +160,7 @@ Some changes need to be made for the PyQt backend to work properly with the Mac 
 `import PyQt6.QtCore`
 
 Now the visualization component should run on your MacOS M1 chip device.
+
+(Added on March 8th, 2023)
+Here is another easy-to-follow instruction for Jupyter notebook users by Vision (Xin) Wang @xin-wang-kr:
+https://github.com/xin-wang-kr/xin-wang-kr.github.io/blob/master/_posts/2023-03-07-PyCX.md
