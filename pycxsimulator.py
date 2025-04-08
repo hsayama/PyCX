@@ -50,7 +50,7 @@ else:                        # Python 2
 
 ## suppressing matplotlib deprecation warnings (especially with subplot) by Hiroki Sayama on 06/29/2020
 import warnings
-warnings.filterwarnings("ignore", category = matplotlib.cbook.MatplotlibDeprecationWarning)
+warnings.filterwarnings("ignore", category = matplotlib.MatplotlibDeprecationWarning)
 
 class GUI:
 
