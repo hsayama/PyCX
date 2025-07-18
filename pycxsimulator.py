@@ -49,6 +49,7 @@ else:                        # Python 2
     from ttk import Notebook
 
 ## suppressing matplotlib deprecation warnings (especially with subplot) by Hiroki Sayama on 06/29/2020
+## bug fixes by Will Deter and Guiherme Brondani (merged on 7/18/2025)
 import warnings
 try: warnings.filterwarnings("ignore", category = matplotlib.cbook.MatplotlibDeprecationWarning) 
 except: warnings.filterwarnings("ignore", category = matplotlib.MatplotlibDeprecationWarning)
