@@ -35,6 +35,7 @@ def observe():
     cla()
     imshow(v, vmin = 0, vmax = 1)
     title("v")
+    tight_layout()
 
 def update():
     global u, v, nextu, nextv

@@ -27,6 +27,7 @@ nx.draw(ba)
 axis('image')
 title('Barabasi-Albert')
 
+tight_layout()
 show()
 
 ### obtaining degree distributions
@@ -53,14 +54,16 @@ subplot(1, 2, 2)
 loglog(ccdf)
 title('CCDF')
 
+tight_layout()
 show()
 
 ### finding important structures
 
 # minimum spanning tree
 mst = nx.minimum_spanning_tree(ba)
-nx.draw(mst)
 title('Minimum spanning tree of ba')
+nx.draw(mst)
+show()
 
 # k-core
 kc = nx.k_core(er)
@@ -68,7 +71,7 @@ print('Nodes in the k-core of er are:')
 print(kc.nodes)
 print('Size of the k-core: ', kc.number_of_nodes())
 
-nx.draw(kc)
 title('k-core of er')
+nx.draw(kc)
 
 show()

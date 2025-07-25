@@ -18,11 +18,11 @@ g.remove_edge(1, 2)
 K10 = nx.complete_graph(10)
 
 # from adjacency matrix
-mat = nx.from_numpy_matrix(array([[0,1,0,1,1],
-                                  [1,0,0,1,0],
-                                  [0,0,0,0,1],
-                                  [1,1,0,0,0],
-                                  [1,0,1,0,0]]))
+mat = nx.from_numpy_array(array([[0,1,0,1,1],
+                                 [1,0,0,1,0],
+                                 [0,0,0,0,1],
+                                 [1,1,0,0,0],
+                                 [1,0,1,0,0]]))
 
 ### visualizing networks
 
@@ -41,6 +41,7 @@ nx.draw_random(mat)
 axis('image')
 title('mat')
 
+tight_layout()
 show()
 
 ### obtaining basic information about networks
@@ -58,7 +59,7 @@ print(K10.edges)
 print("")
 
 print('Adjacency matrix of K10 in numpy array format:')
-print(nx.to_numpy_matrix(K10))
+print(nx.to_numpy_array(K10))
 
 print("")
 

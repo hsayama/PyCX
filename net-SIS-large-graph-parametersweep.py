@@ -78,4 +78,5 @@ subplot(1, 2, 2)
 plot(infectionRates, result)
 title("Barabasi-Albert Network")
 
+tight_layout()
 show()

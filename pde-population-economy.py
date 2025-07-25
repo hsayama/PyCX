@@ -28,6 +28,8 @@ def observe():
     cla()
     imshow(E, vmin = 0, vmax = 5)
     title('Economy')
+
+    tight_layout()
     
 Dp, De, a, b, c = 1250, 250, 600, 1., 0.2
     

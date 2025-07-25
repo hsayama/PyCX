@@ -31,7 +31,7 @@ import matplotlib
 
 #System check added by Steve Morgan
 import platform #SM 3/28/2020
-if platform.system() == 'Windows': #SM 3/28/2020
+if platform.system() == 'Windows' or platform.system() == 'Linux': #SM 3/28/2020, rev HS 7/20/2025
     backend = 'TkAgg'              #SM 3/28/2020
 else:                              #SM 3/28/2020
     backend = 'Qt5Agg'             #SM 3/28/2020

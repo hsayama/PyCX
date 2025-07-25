@@ -10,8 +10,8 @@ for _ in range(10):
         i = max(dict(g.degree()).items(), key = lambda x:x[1])[0]
 
         g.remove_node(i)
-        lcc = max(nx.connected_component_subgraphs(g), key=len)
-        data.append(lcc.number_of_nodes())
+        lcc = max(nx.connected_components(g), key=len)
+        data.append(len(lcc))
     plot(data)
     
 xlabel('Number of removed nodes')

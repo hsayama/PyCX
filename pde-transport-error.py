@@ -19,7 +19,8 @@ def initialize():
     
 def observe():
     global config, nextconfig
-    ax = gca(projection = '3d')
+    fig = gcf()
+    ax = fig.add_subplot(111, projection='3d')
     ax.cla()
     ax.plot_surface(xvalues, yvalues, config, rstride = 5, cstride = 5)
     ax.grid(False)

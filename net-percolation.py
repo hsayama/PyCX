@@ -8,4 +8,5 @@ for i, p in [(1, 0.0001), (2, 0.001), (3, 0.01), (4, 0.1)]:
     nx.draw(g, node_size = 10)
     axis('image')
 
+tight_layout()
 show()
