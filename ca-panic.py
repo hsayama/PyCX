@@ -2,7 +2,7 @@ import pycxsimulator
 from pylab import *
 
 n = 100 # size of space: n x n
-p = 0.24 # probability of initially panicky individuals
+p = 0.26 # probability of initially panicky individuals
 
 def initialize():
     global config, nextconfig

@@ -3,7 +3,7 @@
 PyCX is a Python-based sample code repository for complex systems
 research and education.
 
-_Current version: 1.1 (June 2019)_
+_Current version: 1.2 (July 2025)_
 
 Sample codes are freely available from the **[Project
 website](http://github.com/hsayama/PyCX/)**.
@@ -19,17 +19,17 @@ read and modify any of its codes to learn the basics of complex
 systems modeling and simulation in Python.
 
 The target audiences of PyCX are researchers and students who are
-interested in developing their own software to study complex systems
-using a general-purpose programming language but do not have much
-experience in computer programming.
+interested in developing their own computer codes to study complex
+systems using a general-purpose programming language but do not have
+much experience in computer programming.
 
 The core philosophy of PyCX is therefore placed on the simplicity,
 readability, generalizability, and pedagogical values of sample
 codes. This is often achieved even at the cost of computational speed,
 efficiency, or maintainability. For example, PyCX does not use
-object-oriented programming paradigms so much, it does not use
-sophisticated but complicated algorithm or data structure, it *does*
-use global variables frequently, and so on. These choices were
+object-oriented programming paradigms so much; it does not use
+sophisticated but complicated algorithm or data structure; it *does*
+use global variables frequently; and so on. These choices were
 intentionally made based on the author's experience in teaching
 complex systems modeling and simulation to non-computer scientists
 coming from a wide variety of domains.
@@ -50,29 +50,43 @@ NetworkX.
    * http://matplotlib.org/
    * http://networkx.github.io/
   
-   Alternatively, you can use prepackaged Python suites, such as:
-   * [Anaconda Individual Edition](https://www.anaconda.com/products/individual)
+   Alternatively, you can use prepackaged Python distributions, such as:
+   * [Anaconda Distribution](https://www.anaconda.com/download)
 
-   The codes were tested using Anaconda Individual Edition of Python 3.7
-and 2.7 on their Spyder and Jupyter Notebook environments.
+   The codes were tested using Anaconda Distribution of Python 3.13.5
+   and 2.7.18.
 
 2. Choose a PyCX sample code of your interest.
 
-3. Run it. To run a dynamic, interactive simulation, make sure you have [pycxsimulator.py](https://github.com/hsayama/PyCX/blob/master/pycxsimulator.py).
+3. Run it. To run a dynamic, interactive simulation, make sure you have [pycxsimulator.py](https://github.com/hsayama/PyCX/blob/master/pycxsimulator.py) located in the same folder where your code exists.
 
 4. Read the code to learn how the model was implemented.
 
 5. Change the code as you like.
 
-*Note for Spyder users:* Dynamic simulations may cause a conflict with Spyder's own graphics backend. In such a case, go to "Run" -> "Configuration per file" and select "Execute in an external system terminal".
+*Note for Jupyter Notebook users:* You can run PyCX codes by entering "%run sample-code-name" or "!python sample-code-name.py" in your notebook.
 
-*Note for Jupyter Notebook users:* You can run PyCX codes by entering "%run sample-code-name" in your Notebook.
+*Note for Spyder users:* Dynamic simulations may cause a conflict with Spyder's own graphics backend. In such a case, go to "Run" -> "Configuration per file" and select "External terminal".
 
 ## Revision history
 
+### What's new in version 1.2?
+
+* Various minor updates and improvements have been applied to the codes so that they work robustly with the most up-to-date modules (in both Python 3.13 and Python 2.7).
+
+* Several new models have been added:
+   * Dynamical systems -- SIR models (single strain, multiple strains), Poincare section of the Lorenz equations, Hodgkin-Huxley equations, FitzHugh-Nagumo equations
+   * Networks -- random walk on a network, random Boolean networks (without and with phase space), animation of percolation experiments, animation of small-world experiments
+   * Agent-based models -- epidemics in a moving crowd (without and with virulence evolution), the Vicsek model, the SugarScape model (contributed by Dheeraj Tommandru)
+     - An example of an efficient neighbor detection method has been implemented in the above epidemics and Vicsek models (and a larger-scale DLA model with this neighbor detection method has also been added).
+
+* The issue with MatplotlibDeprecationWarning has been resolved by Will Deter and Guiherme Brondani.
+
+* The Matplotlib's backend issue has been resolved for Linux users by Felipe Xavier Costa.
+
 ### What's new in version 1.1?
 
-* Matplotlib's backend issue has been resolved by Steve Morgan for Mac users.
+* Matplotlib's backend issue has been resolved for Mac users by Steve Morgan.
 
 * MatplotlibDeprecationWarning has been suppressed (particularly for examples that use subplots).
 
@@ -96,7 +110,7 @@ and 2.7 on their Spyder and Jupyter Notebook environments.
    * "net-": for network models
    * "abm-": for agent-based models
 
-* Some new examples were added, including: Hopfield networks, simple swarming, network attack experiment, and population-ecomony interactions.
+* Some new examples were added, including: Hopfield networks, simple swarming, network attack experiment, and population-economy interactions.
 
 * Minor bug fixes were applied to examples of cascading failure, network communities, etc.
 

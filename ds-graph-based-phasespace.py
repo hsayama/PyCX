@@ -12,7 +12,7 @@ n = len(ccs)
 w = ceil(sqrt(n))
 h = ceil(n / w)
 for i in range(n):
-    subplot(h, w, i + 1)
+    subplot(int(h), int(w), i + 1)
     nx.draw(nx.subgraph(g, ccs[i]), with_labels = True)
 
 show()

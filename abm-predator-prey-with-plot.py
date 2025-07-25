@@ -57,6 +57,8 @@ def observe():
     plot(fdata, label = 'predator')
     legend()
 
+    tight_layout()
+
 def update_one_agent():
     global agents
     if agents == []:

@@ -23,7 +23,8 @@ def update():
     nextz = - x - y + z
     x, y, z = nextx, nexty, nextz
 
-ax = gca(projection='3d')
+fig = figure()
+ax = fig.add_subplot(111, projection='3d')
 
 for x0 in arange(-2, 2, 1):
     for y0 in arange(-2, 2, 1):

@@ -1,5 +1,4 @@
 from pylab import *
-from mpl_toolkits.mplot3d import Axes3D
 
 s = 10.
 r = 30.
@@ -31,29 +30,21 @@ def update():
     t = t + Dt
 
 initialize()
-while t < 30.:
+while t < 100.:
     update()
     observe()
 
-subplot(3, 1, 1)
-plot(timesteps, xresult)
-xlabel('t')
-ylabel('x')
+sectionY = []
+sectionZ = []
+for i in range(len(xresult) - 1):
+    x0 = xresult[i]
+    x1 = xresult[i+1]
+    if x0 * x1 < 0:
+        sectionY.append((yresult[i] + yresult[i+1]) / 2)
+        sectionZ.append((zresult[i] + zresult[i+1]) / 2)
 
-subplot(3, 1, 2)
-plot(timesteps, yresult)
-xlabel('t')
-ylabel('y')
-
-subplot(3, 1, 3)
-plot(timesteps, zresult)
-xlabel('t')
+plot(sectionY, sectionZ, 'bo', alpha = 0.5)
+xlabel('y')
 ylabel('z')
-
-tight_layout()
-
-fig = figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot(xresult, yresult, zresult, 'b')
-
+title('Poincare section at x = 0')
 show()
